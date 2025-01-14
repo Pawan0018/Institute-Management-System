@@ -23,11 +23,7 @@ Maintains employee records and integrates their roles into the system.
 
 Here's a refined and structured version of your project's README content:
 
-Institute Management System
-Overview
-The Institute Management System is a comprehensive solution designed to help educational institutions streamline their daily operations. It simplifies the management of inquiries, admissions, student records, course details, admission fees, and employee information. Built with modern technologies, it ensures accuracy, efficiency, and ease of use for staff.
-
-Features
+Features:
 Inquiry Management
 
 Tracks and records all incoming inquiries with relevant details.
