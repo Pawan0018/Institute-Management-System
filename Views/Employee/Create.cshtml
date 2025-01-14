@@ -1,0 +1,177 @@
+﻿@model InstitudeManagement.Models.Employee
+
+@{
+    ViewData["Title"] = "Create";
+}
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto text-center text-white"> Add New Employee</h1>
+    </div>
+</nav>
+
+
+
+<!-- Form Section -->
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg">
+                <div class="card-header bg-secondary text-white">
+                    <h4 class="mb-0 text-center">Employee Details</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                        <div class="row">
+                            <!-- Name -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Name" class="form-label">Name</label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+
+                            <!-- Gender -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Gender" class="form-label">Gender</label>
+                                <select asp-for="Gender" class="form-select">
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span asp-validation-for="Gender" class="text-danger"></span>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Email" class="form-label">Email</label>
+                                <input asp-for="Email" type="email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <!-- Contact No -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ContactNo" class="form-label">Contact Number</label>
+                                <input asp-for="ContactNo" class="form-control" />
+                                <span asp-validation-for="ContactNo" class="text-danger"></span>
+                            </div>
+
+                            <!-- Department -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Department" class="form-label">Department</label>
+                                <input asp-for="Department" class="form-control" />
+                                <span asp-validation-for="Department" class="text-danger"></span>
+                            </div>
+
+                            <!-- Specialized Subject -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="SpecializedSubject" class="form-label">Specialized Subject</label>
+                                <input asp-for="SpecializedSubject" class="form-control" />
+                                <span asp-validation-for="SpecializedSubject" class="text-danger"></span>
+                            </div>
+
+                            <!-- Designation -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Designation" class="form-label">Designation</label>
+                                <input asp-for="Designation" class="form-control" />
+                                <span asp-validation-for="Designation" class="text-danger"></span>
+                            </div>
+
+                            <!-- Date of Joining -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="DateOfJoing" class="form-label">Date of Joining</label>
+                                <input asp-for="DateOfJoing" type="date" class="form-control" />
+                                <span asp-validation-for="DateOfJoing" class="text-danger"></span>
+                            </div>
+
+                            <!-- Salary -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Salary" class="form-label">Salary</label>
+                                <input asp-for="Salary" type="number" class="form-control" />
+                                <span asp-validation-for="Salary" class="text-danger"></span>
+                            </div>
+
+                            <!-- ID Proof Type -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="IdproofType" class="form-label">ID Proof Type</label>
+                                <select asp-for="IdproofType" class="form-select">
+                                    <option value="">Select Proof Type</option>
+                                    <option value="Aadhaar">Aadhaar</option>
+                                    <option value="PAN">PAN</option>
+                                    <option value="Driving License">Driving License</option>
+                                    <option value="Passport">Passport</option>
+                                </select>
+                                <span asp-validation-for="IdproofType" class="text-danger"></span>
+                            </div>
+
+                            <!-- ID Proof Number -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="IdproofNumber" class="form-label">ID Proof Number</label>
+                                <input asp-for="IdproofNumber" class="form-control" />
+                                <span asp-validation-for="IdproofNumber" class="text-danger"></span>
+                            </div>
+
+                            <!-- Status -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Status" class="form-label">Status</label>
+                                <select asp-for="Status" class="form-select">
+                                    <option value="">Select Status</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>
+                                <span asp-validation-for="Status" class="text-danger"></span>
+                            </div>
+
+                            <!-- Experience -->
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Qualification" class="form-label">Qualification</label>
+                                <input asp-for="Qualification"  class="form-control" />
+                                <span asp-validation-for="Qualification" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="CurrentAddress" class="form-label">CurrentAddress</label>
+                                <input asp-for="CurrentAddress"  class="form-control" />
+                                <span asp-validation-for="CurrentAddress" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="PermanentAddress" class="form-label">PermanentAddress</label>
+                                <input asp-for="PermanentAddress"  class="form-control" />
+                                <span asp-validation-for="PermanentAddress" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="MaritalStatus" class="form-label">MaritalStatus</label>
+                                <select asp-for="MaritalStatus" class="form-select">
+                                    <option value="">MaritalStatus Status</option>
+                                    <option value="Married">Single</option>
+                                    <option value="Married">Married</option>
+                                </select>
+                                <span asp-validation-for="Status" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="PreviesExperiance" class="form-label">PreviesExperiance</label>
+                                <input asp-for="PreviesExperiance"  class="form-control" />
+                                <span asp-validation-for="PreviesExperiance" class="text-danger"></span>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="ExperianceInYear" class="form-label">ExperianceInYear</label>
+                                <input asp-for="ExperianceInYear"  class="form-control" />
+                                <span asp-validation-for="ExperianceInYear" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="d-flex justify-content-center">
+                            <input type="submit" value="Create" class="btn btn-primary me-2" />
+                            <a asp-action="EmployeeTable" class="btn btn-secondary">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

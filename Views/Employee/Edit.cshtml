@@ -1,0 +1,166 @@
+﻿@model InstitudeManagement.Models.Employee
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto text-center text-white">Update Employee Details</h1>
+    </div>
+</nav>
+
+<div class="container mt-5">
+   
+
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h4 class="mb-0">Employee Information</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <table class="table table-striped table-hover">
+                    <tbody>
+                        <tr>
+                            <th class="align-middle text-center" style="width: 30%;">Name</th>
+                            <td>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">Gender</th>
+                            <td>
+                                <input asp-for="Gender" class="form-control" />
+                                <span asp-validation-for="Gender" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">Email</th>
+                            <td>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">Contact Number</th>
+                            <td>
+                                <input asp-for="ContactNo" class="form-control" />
+                                <span asp-validation-for="ContactNo" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">Department</th>
+                            <td>
+                                <input asp-for="Department" class="form-control" />
+                                <span asp-validation-for="Department" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">Specialized Subject</th>
+                            <td>
+                                <input asp-for="SpecializedSubject" class="form-control" />
+                                <span asp-validation-for="SpecializedSubject" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">Designation</th>
+                            <td>
+                                <input asp-for="Designation" class="form-control" />
+                                <span asp-validation-for="Designation" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">Date of Joining</th>
+                            <td>
+                                <input asp-for="DateOfJoing" class="form-control" />
+                                <span asp-validation-for="DateOfJoing" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">Salary</th>
+                            <td>
+                                <input asp-for="Salary" class="form-control" />
+                                <span asp-validation-for="Salary" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">ID Proof Type</th>
+                            <td>
+                                <input asp-for="IdproofType" class="form-control" />
+                                <span asp-validation-for="IdproofType" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">ID Proof Number</th>
+                            <td>
+                                <input asp-for="IdproofNumber" class="form-control" />
+                                <span asp-validation-for="IdproofNumber" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">Status</th>
+                            <td>
+                                <input asp-for="Status" class="form-control" />
+                                <span asp-validation-for="Status" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">Qualification</th>
+                            <td>
+                                <input asp-for="Qualification" class="form-control" />
+                                <span asp-validation-for="Qualification" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">CurrentAddress</th>
+                            <td>
+                                <input asp-for="CurrentAddress" class="form-control" />
+                                <span asp-validation-for="CurrentAddress" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">PermanentAddress</th>
+                            <td>
+                                <input asp-for="PermanentAddress" class="form-control" />
+                                <span asp-validation-for="PermanentAddress" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">MaritalStatus</th>
+                            <td>
+                                <input asp-for="MaritalStatus" class="form-control" />
+                                <span asp-validation-for="MaritalStatus" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">PreviesExperiance</th>
+                            <td>
+                                <input asp-for="PreviesExperiance" class="form-control" />
+                                <span asp-validation-for="PreviesExperiance" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle text-center">ExperianceInYear</th>
+                            <td>
+                                <input asp-for="ExperianceInYear" class="form-control" />
+                                <span asp-validation-for="ExperianceInYear" class="text-danger"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-success px-4">Save</button>
+                    <a asp-action="EmployeeTable" class="btn btn-secondary px-4">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

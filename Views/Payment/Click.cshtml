@@ -1,0 +1,150 @@
+﻿@{
+    ViewData["Title"] = "Click";
+}
+
+<h1 class="title">Payment Portal</h1>
+
+<div class="container" id="container">
+    <h2 class="subtitle">Select Student for Payment</h2>
+
+    <!-- Dropdown for student selection -->
+    <label for="student" class="label">Select Student:</label>
+    <div class="dropdown-container">
+        <input list="students" id="student" name="student" placeholder="Search By Name, Mobile Number, Parent Name" class="dropdown-input" autocomplete="off">
+        <datalist id="students">
+            @foreach (var admission in ViewBag.Admissions)
+            {
+                <option value="@admission.Text" data-id="@admission.Value"></option>
+            }
+        </datalist>
+    </div>
+    <a asp-action="Dashboard" asp-controller="Home" class="btn btn-secondary btn-sm">Back Page</a>
+    <!-- Make Payment Button -->
+    <a href="#" id="make-payment" class="payment-link" style="display: none">
+        <i class="fas fa-credit-card"></i> Make Payment
+    </a>
+</div>
+
+<style>
+    /* Overall Styling */
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: #f0f4f8;
+        color: #2c3e50;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+
+    .title {
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2.8rem;
+        margin-bottom: 40px;
+        font-weight: 700;
+    }
+
+    .subtitle {
+        font-size: 1.5rem;
+        color: #34495e;
+        margin-bottom: 15px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    /* Container Styling */
+   #container {
+        max-width: 600px;
+        background: #fff;
+        padding: 30px;
+        margin: 0 auto;
+        border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+        color: #555;
+    }
+
+    /* Dropdown Styling */
+    .dropdown-container {
+        position: relative;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .dropdown-input {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1.1rem;
+    }
+
+    .dropdown-input:focus {
+        outline: none;
+        border-color: #3498db;
+        box-shadow: 0 0 8px rgba(52, 152, 219, 0.5);
+    }
+
+    /* Button Styling */
+    .payment-link {
+        display: inline-block;
+        padding: 15px 30px;
+        background: #3498db;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .payment-link i {
+        margin-right: 8px;
+    }
+
+    /* Mobile-Friendly Adjustments */
+    .media (max-width: 768px) {
+        .title {
+            font-size: 2.2rem;
+        }
+
+        #container {
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .payment-link {
+            padding: 12px 20px;
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<script>
+    // Handle student selection and enable the Make Payment button
+    document.getElementById('student').addEventListener('input', function () {
+        var selectedStudent = this.value;
+        var option = Array.from(document.querySelectorAll('#students option'))
+            .find(opt => opt.value === selectedStudent);
+
+        if (option) {
+            var studentId = option.getAttribute('data-id');
+            var makePaymentButton = document.getElementById('make-payment');
+            makePaymentButton.style.display = 'inline-block';
+            // Correct URL assignment with template literals
+            makePaymentButton.href = `/Payment/Make?id=${studentId}`;
+        } else {
+            // Hide the Make Payment button if no valid student is selected
+            document.getElementById('make-payment').style.display = 'none';
+        }
+    });
+</script>

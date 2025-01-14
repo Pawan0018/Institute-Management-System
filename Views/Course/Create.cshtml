@@ -1,0 +1,246 @@
+﻿@model InstitudeManagement.Models.Course1
+
+@{
+    ViewData["Title"] = "Create Course";
+}
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto text-center text-white">Add New Course</h1>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <hr />
+    <form asp-action="Create" method="post">
+        <table class="table table-bordered">
+            <tbody>
+                <!-- Course Name -->
+                <tr>
+                    <td><label class="fw-bold" for="courseName">Course Name:</label></td>
+                    <td><input type="text" class="form-control" id="courseName" name="courseName" value="@Model?.CourseName" required /></td>
+                </tr>
+
+                <!-- Course Duration -->
+                <tr>
+                    <td><label class="fw-bold" for="duration">Course Duration:</label></td>
+                    <td><input type="text" class="form-control" id="duration" name="duration" value="@Model?.Duration" required /></td>
+                </tr>
+
+                <!-- Course Fees -->
+                <tr>
+                    <td><label class="fw-bold" for="fees">Course Fees:</label></td>
+                    <td><input type="number" class="form-control" id="fees" name="fees" value="@Model?.Fees" required /></td>
+                </tr>
+
+                <!-- Course Format -->
+                <tr>
+                    <td><label class="fw-bold" for="courseFormat">Course Format:</label></td>
+                    <td><input type="text" class="form-control" id="courseFormat" name="courseFormat" value="@Model?.CourseFormate" required /></td>
+                </tr>
+
+                <section class="container mt-5">
+                    <h2 class="text-center mb-4">Course Form: Select Languages</h2>
+
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="text-center">Language Type</th>
+                                <th class="text-center">Languages</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Front-End Languages -->
+                            <tr>
+                                <td><label class="fw-bold" for="frontEnd">Front-End Languages:</label></td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="HTML" class="form-check-input" /> <label class="form-check-label">HTML</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="CSS" class="form-check-input" /> <label class="form-check-label">CSS</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="JavaScript" class="form-check-input" /> <label class="form-check-label">JavaScript</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="Bootstrap" class="form-check-input" /> <label class="form-check-label">Bootstrap</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="Tailwind CSS" class="form-check-input" /> <label class="form-check-label">Tailwind CSS</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="Angular" class="form-check-input" /> <label class="form-check-label">Angular</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="React" class="form-check-input" /> <label class="form-check-label">React</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="Vue" class="form-check-input" /> <label class="form-check-label">Vue</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="Svelte" class="form-check-input" /> <label class="form-check-label">Svelte</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="TypeScript" class="form-check-input" /> <label class="form-check-label">TypeScript</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="jQuery" class="form-check-input" /> <label class="form-check-label">jQuery</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="Ember" class="form-check-input" /> <label class="form-check-label">Ember.js</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="frontEnd" value="Lit" class="form-check-input" /> <label class="form-check-label">Lit</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Back-End Languages -->
+                            <tr>
+                                <td><label class="fw-bold" for="backEnd">Back-End Languages:</label></td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="Node.js" class="form-check-input" /> <label class="form-check-label">Node.js</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="C#WinForms" class="form-check-input" /> <label class="form-check-label">C# WinForms</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="C#" class="form-check-input" /> <label class="form-check-label">C#</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="Java" class="form-check-input" /> <label class="form-check-label">Java</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="Python" class="form-check-input" /> <label class="form-check-label">Python</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="Ruby" class="form-check-input" /> <label class="form-check-label">Ruby</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="PHP" class="form-check-input" /> <label class="form-check-label">PHP</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="Go" class="form-check-input" /> <label class="form-check-label">Go</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="Rust" class="form-check-input" /> <label class="form-check-label">Rust</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="ASP.NET Core" class="form-check-input" /> <label class="form-check-label">ASP.NET Core</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="OOP`s" class="form-check-input" /> <label class="form-check-label">ASP.</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="Kotlin" class="form-check-input" /> <label class="form-check-label">Kotlin</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="Django" class="form-check-input" /> <label class="form-check-label">Django</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="Flask" class="form-check-input" /> <label class="form-check-label">Flask</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="backEnd" value="ASP.NET Core(Restful API)" class="form-check-input" /> <label class="form-check-label">ASP.NET Core(Restful API)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- Database Languages -->
+                            <tr>
+                                <td><label class="fw-bold" for="dataBaseLanguage">Database Languages:</label></td>
+                                <td>
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="dataBaseLanguage" value="SQL" class="form-check-input" /> <label class="form-check-label">SQL</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="dataBaseLanguage" value="MongoDB" class="form-check-input" /> <label class="form-check-label">MongoDB</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="dataBaseLanguage" value="MySQL" class="form-check-input" /> <label class="form-check-label">MySQL</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="dataBaseLanguage" value="PostgreSQL" class="form-check-input" /> <label class="form-check-label">PostgreSQL</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="dataBaseLanguage" value="SQLite" class="form-check-input" /> <label class="form-check-label">SQLite</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="dataBaseLanguage" value="Oracle" class="form-check-input" /> <label class="form-check-label">Oracle</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="dataBaseLanguage" value="Cassandra" class="form-check-input" /> <label class="form-check-label">Cassandra</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="dataBaseLanguage" value="Firebase" class="form-check-input" /> <label class="form-check-label">Firebase</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="dataBaseLanguage" value="Redis" class="form-check-input" /> <label class="form-check-label">Redis</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-check">
+                                                <input type="checkbox" name="dataBaseLanguage" value="MariaDB" class="form-check-input" /> <label class="form-check-label">MariaDB</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="dataBaseLanguage" value="PLSQL" class="form-check-input" /> <label class="form-check-label">PLSQL</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input type="checkbox" name="dataBaseLanguage" value="SQLServer" class="form-check-input" /> <label class="form-check-label">SQLServer</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Course Description -->
+                <tr>
+                    <td><label class="fw-bold" for="courseDescription">Course Description:</label></td>
+                    <td><textarea class="form-control" id="courseDescription" name="courseDescription" rows="4">@Model?.CourseDescription</textarea></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Submit Button -->
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-lg">Create Course</button>
+        </div>
+    </form>
+
+    <!-- Back to List -->
+    <div class="text-center mt-3">
+        <a asp-action="CourseTable" class="btn btn-secondary btn-sm">
+            <i class="bi bi-arrow-left-circle"></i> Back to Course List
+        </a>
+    </div>
+</div>
+
+<!-- Include Bootstrap Icons for Back Button -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">

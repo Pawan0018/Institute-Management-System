@@ -1,0 +1,199 @@
+﻿@model IEnumerable<InstitudeManagement.Models.Inquiry>
+
+@{
+    ViewData["Title"] = "Inquiry Table";
+}
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto text-center text-white">Inquiry Table</h1>
+    </div>
+</nav>
+
+<!-- Main Container -->
+<div class="container-fliud my-3">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <!-- Search Filter Section -->
+        <div class="text-end">
+            <form method="get" class="row g-2">
+                <div class="col-auto">
+                    <label for="fromDate" class="form-label">From Date:</label>
+                    <input type="date" id="fromDate" name="fromDate" class="form-control form-control-sm" />
+                </div>
+                <div class="col-auto">
+                    <label for="toDate" class="form-label">To Date:</label>
+                    <input type="date" id="toDate" name="toDate" class="form-control form-control-sm" />
+                </div>
+                <div class="col-auto d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary btn-sm">Search</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Total Inquiry Section -->
+        <div>
+            <h4 class="d-flex">Total Inquiry: @Model.Count()</h4>
+            <form asp-controller="AddmissionController1" asp-action="AddmissionTable" method="get" class="d-flex">
+                <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control form-control-sm me-2" placeholder="Search" />
+                <button type="submit" class="btn btn-primary btn-sm">Search</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Action Buttons Section (Swapped Position) -->
+    <div class="d-flex justify-content-between mb-3">
+        <!-- Additional Links Section (Now on the Left) -->
+        <div class="d-flex gap-3">
+            <a asp-action="Create" class="btn btn-success btn-sm">Create New</a>
+            <a asp-action="Dashboard" asp-controller="Home" class="btn btn-secondary btn-sm">Back Page</a>
+        </div>
+
+        <!-- Edit, Delete, Admission Buttons Section (Now on the Right) -->
+        <div class="d-flex gap-2">
+            <button id="editBtn" class="btn btn-warning btn-sm"><i class="bi bi-pencil-square"></i> Edit</button>
+            <button id="deleteBtn" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> Delete</button>
+            <button id="admissionBtn" class="btn btn-info btn-sm"><i class="bi bi-eye"></i> Admission</button>
+        </div>
+    </div>
+
+   
+
+    <!-- Scrollable Table Section -->
+    <div style="max-height: 400px; overflow-y: auto; border: 1px solid #dee2e6;">
+        <table id="inquiryTable" class="table table-bordered table-hover table-striped align-middle mb-0">
+            <thead class="table-dark text-center" style="position: sticky; top: 0; z-index: 1;">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.First().Id)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Name)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Gender)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Dob)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Contact)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Address)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().City)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().InquiryDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Qualification)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Email)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Course)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Fees)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().Remark)</th>
+                    <th>@Html.DisplayNameFor(model => model.First().InquiryTakonBy)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr data-id="@item.Id">
+                            <td class="text-center">@Html.DisplayFor(modelItem => item.Id)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Dob)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Contact)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                            <td>@Html.DisplayFor(modelItem => item.City)</td>
+                            <td>@Html.DisplayFor(modelItem => item.InquiryDate)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Qualification)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Course)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Fees)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Remark)</td>
+                            <td>@Html.DisplayFor(modelItem => item.InquiryTakonBy)</td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="14" class="text-danger">No Record Found</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Bootstrap Modal for Alert -->
+<div class="modal fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="alertModalLabel">Action Required</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Please select a row from the table before proceeding.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        //fromDate  to toDate 
+        document.addEventListener("DOMContentLoaded", function () {
+            // Get the current date
+            const currentDate = new Date();
+
+            // Format date to yyyy-mm-dd
+            const formattedDate = currentDate.toISOString().split('T')[0];
+
+            // Set the value of fromDate and toDate inputs to the current date
+            document.getElementById("fromDate").value = formattedDate;
+            document.getElementById("toDate").value = formattedDate;
+        });
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const table = document.getElementById("inquiryTable");
+            let selectedRow = null;
+
+            // Add click event listener to all rows (improved)
+            table.addEventListener("click", function (e) {
+                const row = e.target.closest("tr");
+                if (row && row.dataset.id) {
+                    // Remove highlight from previously selected row
+                    if (selectedRow) {
+                        selectedRow.classList.remove("table-primary");
+                    }
+                    // Highlight the new selected row
+                    selectedRow = row;
+                    selectedRow.classList.add("table-primary");
+                }
+            });
+
+            const alertModal = new bootstrap.Modal(document.getElementById("alertModal"));
+
+            // Handle action buttons
+            function handleButtonClick(action) {
+                if (!selectedRow) {
+                    alertModal.show();
+                } else {
+                    const selectedId = selectedRow.dataset.id;
+                    if (action === "edit") {
+                        window.location.href = `/User/Edit/${selectedId}`;
+                    } else if (action === "delete") {
+                        // Remove the confirmation popup and directly perform the action
+                        window.location.href = `/User/Delete/${selectedId}`;
+                    } else if (action === "admission") {
+                        window.location.href = `/Addmissioncontroller1/Add/${selectedId}`;
+                    }
+                }
+            }
+
+
+            // Add event listeners for the buttons
+            document.getElementById("editBtn").addEventListener("click", () => handleButtonClick("edit"));
+            document.getElementById("deleteBtn").addEventListener("click", () => handleButtonClick("delete"));
+            document.getElementById("admissionBtn").addEventListener("click", () => handleButtonClick("admission"));
+        });
+    </script>
+}

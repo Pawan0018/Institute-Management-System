@@ -1,0 +1,221 @@
+﻿@model InstitudeManagement.Models.Addmission1
+
+@{
+    ViewData["Title"] = "Details";
+}
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="mx-auto text-center text-white">Student Details</h1>
+    </div>
+</nav>
+
+
+
+
+
+<div class="container mt-4">
+    
+    <hr />
+    <div class="row g-4">
+        <!-- Column 1: Personal Information -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">Personal Information</div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.Name)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.Name)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.Gender)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.Gender)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.Dob)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.Dob)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.ContactNo)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.ContactNo)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.AadharcardNo)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.AadharcardNo)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.ParentName)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.ParentName)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.Email)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.Email)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 2: Address & Qualification -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-success text-white">Address & Qualification</div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.ParentContactNo)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.ParentContactNo)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.PermanentAddress)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.PermanentAddress)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.CurrentAddress)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.CurrentAddress)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.City)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.City)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.Qualification)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.Qualification)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.PreviousSchoolClg)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.PreviousSchoolClg)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 3: Course Details -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning text-dark">Course Details</div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.Marks)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.Marks)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.Course)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.Course)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.FrontEnd)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.FrontEnd)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.BackEnd)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.BackEnd)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.DataBaseLanguage)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.DataBaseLanguage)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.AddmissionDate)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.AddmissionDate)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.RegistrationFees)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.RegistrationFees)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.PaymentMode)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.PaymentMode)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.TransactionId)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.TransactionId)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 4: Installment Details -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-info text-white">Installment Details</div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.CourseFees)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.CourseFees)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.Dicount)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.Dicount)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.DicountedCourceFees)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.DicountedCourceFees)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.Installment)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.Installment)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.FirstDate)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.FirstDate)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.FristInsta)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.FristInsta)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.SecondDate)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.SecondDate)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.SecondInsta)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.SecondInsta)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 5: Further Installment Details -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-secondary text-white">Further Installment Details</div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.ThirdDate)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.ThirdDate)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.ThirdInsta)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.ThirdInsta)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.FourthDate)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.FourthDate)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.FourthInsta)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.FourthInsta)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.FifthDate)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.FifthDate)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.FifthInsta)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.FifthInsta)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column 6: Final Installment and Additional Information -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card shadow-sm">
+                <div class="card-header bg-danger text-white">Final Installment & Admission Info</div>
+                <div class="card-body">
+                    <dl class="row">
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.SixDate)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.SixDate)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.SixInsta)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.SixInsta)</dd>
+
+                        <dt class="col-6">@Html.DisplayNameFor(model => model.AdmissionTakenBy)</dt>
+                        <dd class="col-6">@Html.DisplayFor(model => model.AdmissionTakenBy)</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="text-center mt-5">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-primary me-2">
+            <i class="fas fa-edit"></i> Edit
+        </a>
+        <a asp-action="AddmissionTable" class="btn btn-secondary me-2">
+            <i class="fas fa-arrow-left"></i> Back to List
+        </a>
+        <button class="btn btn-success" onclick="window.print();">
+            <i class="fas fa-print"></i> Print
+        </button>
+    </div>
+</div>
+
+
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+

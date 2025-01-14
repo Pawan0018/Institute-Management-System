@@ -1,0 +1,173 @@
+﻿@model InstitudeManagement.Models.Payment
+
+@{
+    ViewData["Title"] = "Make";
+}
+
+<nav class="navbar navbar-light  bg-warning">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="mx-auto text-center text-white">Make Payment</h1>
+    </div>
+</nav>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form asp-action="Make">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <table class="table table-bordered mx-auto">
+                <tr>
+                    <td><label asp-for="StudentId" class="control-label"></label></td>
+                    <td><input asp-for="StudentId" class="form-control" readonly /></td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="StudentName" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="StudentName" class="form-control" readonly />
+                        <span asp-validation-for="StudentName" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="MobileNo" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="MobileNo" class="form-control" readonly />
+                        <span asp-validation-for="MobileNo" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="Gmail" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="Gmail" class="form-control" readonly />
+                        <span asp-validation-for="Gmail" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="ParentName" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="ParentName" class="form-control" readonly />
+                        <span asp-validation-for="ParentName" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="CourseName" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="CourseName" class="form-control" readonly />
+                        <span asp-validation-for="CourseName" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="ReceiptNo" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="ReceiptNo" class="form-control" readonly value="@Model.ReceiptNo" />
+                        <span asp-validation-for="ReceiptNo" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="ReceiptDate" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="ReceiptDate" class="form-control" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" readonly />
+                        <span asp-validation-for="ReceiptDate" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="FeesStatus" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="FeesStatus" class="form-control" readonly />
+                        <span asp-validation-for="FeesStatus" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="ReceivedAmount" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="ReceivedAmount" class="form-control" />
+                        <span asp-validation-for="ReceivedAmount" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="ReceivedMode" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="ReceivedMode" class="form-control" />
+                        <span asp-validation-for="ReceivedMode" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="TransactionStatus" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="TransactionStatus" class="form-control" />
+                        <span asp-validation-for="TransactionStatus" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="TransactionNumber" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="TransactionNumber" class="form-control" value="@Model.TransactionNumber" />
+                        <span asp-validation-for="TransactionNumber" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label asp-for="TransactionDate" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="TransactionDate" class="form-control" type="date" value="@DateTime.Now.ToString("yyyy-MM-dd")" readonly />
+                        <span asp-validation-for="TransactionDate" class="text-danger"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Narration" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="Narration" class="form-control" />
+                        <span asp-validation-for="Narration" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="ReceivedBy" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="ReceivedBy" class="form-control" />
+                        <span asp-validation-for="ReceivedBy" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="TermCondition" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="TermCondition" class="form-control" />
+                        <span asp-validation-for="TermCondition" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="ReceiptRemark" class="control-label"></label></td>
+                    <td>
+                        <input asp-for="ReceiptRemark" class="form-control" />
+                        <span asp-validation-for="ReceiptRemark" class="text-danger"></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <input type="submit" value="Create" class="btn btn-primary" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+<div class="text-center mt-3">
+    <a asp-action="Click" class="btn btn-link">Back to List</a>
+</div>

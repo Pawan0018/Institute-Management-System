@@ -1,0 +1,132 @@
+﻿@model IEnumerable<InstitudeManagement.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employee Table";
+}
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto text-center text-white">Employee Table</h1>
+    </div>
+</nav>
+<div class="container-fliud mt-4">
+   
+
+    <!-- Action Buttons and Search Form -->
+    <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+        <!-- Action Buttons -->
+        <div>
+            <a asp-action="Create" class="btn btn-success btn-sm me-2">Create New</a>
+            <a asp-action="Dashboard" asp-controller="Home" class="btn btn-secondary btn-sm">Back Page</a>
+        </div>
+
+        <!-- Search Form -->
+        <div> <h4>Total Employee: @Model.Count()</h4>
+        <form asp-controller="Employee" asp-action="EmployeeTable" method="get" class="d-flex flex-wrap">
+            <div class="input-group">
+                <input type="text" name="searchString" value="@ViewData["CurrentFilter"]" class="form-control form-control-sm me-2" placeholder="Search..." />
+                <button type="submit" class="btn btn-primary btn-sm">
+                    <i class="fas fa-search"></i> Search
+                </button>
+            </div>
+        </form>
+        </div>
+    </div>
+    @if (TempData["Create"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+            <strong>Success!</strong> @TempData["Create"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["Edit"] != null)
+    {
+        <div class="alert alert-info alert-dismissible fade show text-center" role="alert">
+            <strong>Updated!</strong>@TempData["Edit"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    @if (TempData["Delete"] != null)
+    {
+        <div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+            <strong>Deleted!</strong>@TempData["Delete"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <!-- Table with fixed header and scrollbars -->
+    <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+        <table class="table table-bordered table-hover table-striped">
+            <thead class="table-dark" style="position: sticky; top: 0; z-index: 1;">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Id)</th>
+                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>@Html.DisplayNameFor(model => model.Gender)</th>
+                    <th>@Html.DisplayNameFor(model => model.Email)</th>
+                    <th>@Html.DisplayNameFor(model => model.ContactNo)</th>
+                    <th>@Html.DisplayNameFor(model => model.Department)</th>
+                    <th>@Html.DisplayNameFor(model => model.SpecializedSubject)</th>
+                    <th>@Html.DisplayNameFor(model => model.Designation)</th>
+                    <th>@Html.DisplayNameFor(model => model.DateOfJoing)</th>
+                    <th>@Html.DisplayNameFor(model => model.Salary)</th>
+                    <th>@Html.DisplayNameFor(model => model.IdproofType)</th>
+                    <th>@Html.DisplayNameFor(model => model.IdproofNumber)</th>
+                    <th>@Html.DisplayNameFor(model => model.Status)</th>
+                    <th>@Html.DisplayNameFor(model => model.Qualification)</th>
+                    <th>@Html.DisplayNameFor(model => model.CurrentAddress)</th>
+                    <th>@Html.DisplayNameFor(model => model.PermanentAddress)</th>
+                    <th>@Html.DisplayNameFor(model => model.MaritalStatus)</th>
+                    <th>@Html.DisplayNameFor(model => model.PreviesExperiance)</th>
+                    <th>@Html.DisplayNameFor(model => model.ExperianceInYear)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model != null && Model.Any())
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td>@Html.DisplayFor(modelItem => item.ContactNo)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Department)</td>
+                            <td>@Html.DisplayFor(modelItem => item.SpecializedSubject)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Designation)</td>
+                            <td>@Html.DisplayFor(modelItem => item.DateOfJoing)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Salary)</td>
+                            <td>@Html.DisplayFor(modelItem => item.IdproofType)</td>
+                            <td>@Html.DisplayFor(modelItem => item.IdproofNumber)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Qualification)</td>
+                            <td>@Html.DisplayFor(modelItem => item.CurrentAddress)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PermanentAddress)</td>
+                            <td>@Html.DisplayFor(modelItem => item.MaritalStatus)</td>
+                            <td>@Html.DisplayFor(modelItem => item.PreviesExperiance)</td>
+                            <td>@Html.DisplayFor(modelItem => item.ExperianceInYear)</td>
+                            <td>
+                                <div class="d-flex gap-2">
+                                    <a class="btn btn-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                    <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                                    <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="20" class="text-danger">No Record Found</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

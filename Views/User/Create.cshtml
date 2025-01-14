@@ -1,0 +1,152 @@
+﻿@model InstitudeManagement.Models.Inquiry
+
+@{
+    ViewData["Title"] = "Create Inquiry";
+}
+
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto text-white text-center">Create New Inquiry</h1>
+    </div>
+</nav>
+
+<div class="container-fluid mt-5">
+    <h2 class="text-center">Student Information</h2>
+    <hr />
+
+    <div class="row justify-content-center  fw-bold">
+        <div class="col-md-10">
+            <form asp-action="Create" class="p-4 shadow rounded bg-light">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <table class="table w-100">
+                    <tbody>
+                        <tr>
+                            <td class="align-middle"><label asp-for="Name" class="form-label">Full Name</label></td>
+                            <td>
+                                <input asp-for="Name" class="form-control" placeholder="Enter full name" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><label asp-for="Gender" class="form-label">Gender</label></td>
+                            <td>
+                                <select asp-for="Gender" class="form-control">
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <span asp-validation-for="Gender" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><label asp-for="Dob" class="form-label">Date of Birth</label></td>
+                            <td>
+                                <input asp-for="Dob" class="form-control" type="date" />
+                                <span asp-validation-for="Dob" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><label asp-for="Contact" class="form-label">Contact Number</label></td>
+                            <td>
+                                <input asp-for="Contact" class="form-control" placeholder="Enter contact number" />
+                                <span asp-validation-for="Contact" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><label asp-for="Address" class="form-label">Address</label></td>
+                            <td>
+                                <input asp-for="Address" class="form-control" placeholder="Enter address" />
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><label asp-for="City" class="form-label">City</label></td>
+                            <td>
+                                <input asp-for="City" class="form-control" placeholder="Enter city" />
+                                <span asp-validation-for="City" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><label asp-for="InquiryDate" class="form-label">Inquiry Date</label></td>
+                            <td>
+                                <input asp-for="InquiryDate" id="inquiryDate" type="date" class="form-control" />
+                                <span asp-validation-for="InquiryDate" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><label asp-for="Qualification" class="form-label">Qualification</label></td>
+                            <td>
+                                <input asp-for="Qualification" class="form-control" placeholder="Enter qualification" />
+                                <span asp-validation-for="Qualification" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><label asp-for="Email" class="form-label">Email Address</label></td>
+                            <td>
+                                <input asp-for="Email" class="form-control" placeholder="Enter email" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><label asp-for="Course" class="form-label">Course</label></td>
+                            <td>
+                                <select asp-for="Course" class="form-control" placeholder="Enter course" asp-items="ViewBag.Courses">
+                                    <option>--Select Course--</option>
+                                </select>
+                                 <span asp-validation-for="CourseId" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><label asp-for="Fees" class="form-label">Fees</label></td>
+                            <td>
+                                <input asp-for="Fees" class="form-control" placeholder="Enter fees" />
+                                <span asp-validation-for="Fees" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><label asp-for="Remark" class="form-label">Remark</label></td>
+                            <td>
+                                <textarea asp-for="Remark" class="form-control" placeholder="Add any remarks"></textarea>
+                                <span asp-validation-for="Remark" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="align-middle"><label asp-for="InquiryTakonBy" class="form-label">Inquiry Taken By</label></td>
+                            <td>
+                                <input asp-for="InquiryTakonBy" class="form-control" placeholder="Enter the name of the staff" />
+                                <span asp-validation-for="InquiryTakonBy" class="text-danger"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="d-flex justify-content-center mt-4">
+                    <input type="submit" value="Create" class="btn btn-primary me-2" />
+                    <a asp-action="Table" class="btn btn-secondary">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts 
+{
+    <script>
+        //Automatically Select current date
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get current date in yyyy-MM-dd format
+            const today = new Date();
+            const yyyy = today.getFullYear();
+            const mm = String(today.getMonth() + 1).padStart(2, '0'); // Ensure two-digit month
+            const dd = String(today.getDate()).padStart(2, '0'); // Ensure two-digit day
+            const formattedDate = `${yyyy}-${mm}-${dd}`;
+
+            // Directly set the value to the input field
+            document.getElementById('inquiryDate').value = formattedDate;
+        });
+    </script>
+}

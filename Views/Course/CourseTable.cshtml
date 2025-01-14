@@ -1,0 +1,94 @@
+﻿@model IEnumerable<InstitudeManagement.Models.Course1>
+
+@{
+    ViewData["Title"] = "CourseTable";
+}
+
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto text-center text-white">Cource Table</h1>
+    </div>
+</nav>
+
+
+
+<div class="container-fliud mt-4">
+    
+    <div class="mb-3">
+        <a asp-action="Create" class="btn btn-success btn-sm">Create New</a>
+        <a asp-action="Dashboard" asp-controller="Home" class="btn btn-secondary btn-sm">Back Page</a>
+    </div>
+    <div class="d-flex justify-content-between align-items- mb-3">
+        <h3>Total Course: @Model.Count()</h3>
+    </div>
+
+
+    @if (TempData["Create"] != null)
+    {
+        <p class="text-success font-weight-bold text-center rounded border border-success p-3 bg-light shadow-sm"
+           style="font-size: 1.2rem; line-height: 1.5;">
+            @TempData["Create"]
+        </p>
+    }
+
+    @if (TempData["Edit"] != null)
+    {
+        <p class="text-success font-weight-bold text-center rounded border border-success p-3 bg-light shadow-sm"
+           style="font-size: 1.2rem; line-height: 1.5;">
+            @TempData["Edit"]
+        </p>
+    }
+
+    @if (TempData["Delete"] != null)
+    {
+        <p class="text-success font-weight-bold text-center rounded border border-success p-3 bg-light shadow-sm"
+           style="font-size: 1.2rem; line-height: 1.5;">
+            @TempData["Delete"]
+        </p>
+    }
+
+    <!-- Table Container with Sticky Header -->
+    <div class ="table-responsive" style="max-height: 400px; overflow-y: auto;"> 
+        <table class="table table-striped table-hover table-bordered align-middle">
+            <thead class="thead-dark">
+                <tr>
+                    <th style="position: sticky; top: 0; z-index: 2; background-color: #343a40; color: white;">@Html.DisplayNameFor(model => model.Id)</th>
+                    <th style="position: sticky; top: 0; z-index: 2; background-color: #343a40; color: white;">@Html.DisplayNameFor(model => model.CourseName)</th>
+                    <th style="position: sticky; top: 0; z-index: 2; background-color: #343a40; color: white;">@Html.DisplayNameFor(model => model.FrontEnd)</th>
+                    <th style="position: sticky; top: 0; z-index: 2; background-color: #343a40; color: white;">@Html.DisplayNameFor(model => model.BackEnd)</th>
+                    <th style="position: sticky; top: 0; z-index: 2; background-color: #343a40; color: white;">@Html.DisplayNameFor(model => model.DataBaseLanguage)</th>
+                    <th style="position: sticky; top: 0; z-index: 2; background-color: #343a40; color: white;">@Html.DisplayNameFor(model => model.Duration)</th>
+                    <th style="position: sticky; top: 0; z-index: 2; background-color: #343a40; color: white;">@Html.DisplayNameFor(model => model.Fees)</th>
+                    <th style="position: sticky; top: 0; z-index: 2; background-color: #343a40; color: white;">@Html.DisplayNameFor(model => model.CourseFormate)</th>
+                    <th style="position: sticky; top: 0; z-index: 2; background-color: #343a40; color: white;">@Html.DisplayNameFor(model => model.CourseDescription)</th>
+                    <th class="text-center" style="position: sticky; top: 0; z-index: 2; background-color: #343a40; color: white;">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CourseName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.FrontEnd)</td>
+                        <td>@Html.DisplayFor(modelItem => item.BackEnd)</td>
+                        <td>@Html.DisplayFor(modelItem => item.DataBaseLanguage)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Duration)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Fees)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CourseFormate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CourseDescription)</td>
+                        <td class="d-flex gap-2 align-items-center">
+                            <a class="btn btn-warning btn-sm" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <a class="btn btn-info btn-sm" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                            <a class="btn btn-danger btn-sm" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

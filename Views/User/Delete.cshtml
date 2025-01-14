@@ -1,0 +1,109 @@
+﻿@model InstitudeManagement.Models.Inquiry
+
+@{
+    ViewData["Title"] = "Delete Inquiry";
+}
+
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto  text-white text-center">Confirm Delete</h1>
+    </div>
+</nav>
+
+
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <!-- Card for Details -->
+            <div class="card shadow-lg border-0 rounded">
+                <div class="card-header bg-warning text-dark text-center">
+                    <h4 class="mb-0 fw-bold">Inquiry Details</h4>
+                </div>
+                <div class="card-body p-4">
+                    <dl class="row">
+                        <!-- Name -->
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.Name)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
+                        <!-- Gender -->
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.Gender)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Gender)</dd>
+                        <!-- Date of Birth -->
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.Dob)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Dob)</dd>
+                        <!-- Contact -->
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.Contact)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Contact)</dd>
+                        <!-- Address -->
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.Address)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Address)</dd>
+                        <!-- City -->
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.City)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.City)</dd>
+
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.InquiryDate)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.InquiryDate)</dd>
+                        <!-- Qualification -->
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.Qualification)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Qualification)</dd>
+                        <!-- Email -->
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.Email)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Email)</dd>
+                        <!-- Course -->
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.Course)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Course)</dd>
+                        <!-- Fees -->
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.Fees)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Fees)</dd>
+                        <!-- Remark -->
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.Remark)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.Remark)</dd>
+                        <!-- Inquiry Taken By -->
+                        <dt class="col-sm-4 text-secondary fw-bold">@Html.DisplayNameFor(model => model.InquiryTakonBy)</dt>
+                        <dd class="col-sm-8">@Html.DisplayFor(model => model.InquiryTakonBy)</dd>
+                    </dl>
+
+                    <!-- Action Buttons -->
+                    <div class="text-center mt-4">
+                        <!-- Trigger Modal -->
+                        <button type="button" class="btn btn-danger btn-lg shadow me-3" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                        <a asp-action="Table" asp-controller="User" class="btn btn-secondary btn-lg shadow">
+                            <i class="fas fa-arrow-left"></i> Back to List
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Delete Confirmation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p>Are you sure you want to delete the record for <strong>@Model.Name</strong>? This action is irreversible.</p>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <button type="submit" class="btn btn-danger shadow-sm">
+                        <i class="fas fa-check"></i> Yes, Delete
+                    </button>
+                </form>
+                <button type="button" class="btn btn-secondary shadow-sm" data-bs-dismiss="modal">
+                    <i class="fas fa-times"></i> Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

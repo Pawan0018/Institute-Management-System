@@ -1,0 +1,150 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|c:\\users\\a\\source\\repos\\institudemanagement\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|solutionrelative:controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|c:\\users\\a\\source\\repos\\institudemanagement\\views\\payment\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|solutionrelative:views\\payment\\payment.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|c:\\users\\a\\source\\repos\\institudemanagement\\views\\addmissioncontroller1\\addmissiontable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|solutionrelative:views\\addmissioncontroller1\\addmissiontable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|c:\\users\\a\\source\\repos\\institudemanagement\\views\\payment\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|solutionrelative:views\\payment\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|c:\\users\\a\\source\\repos\\institudemanagement\\views\\payment\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|solutionrelative:views\\payment\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|c:\\users\\a\\source\\repos\\institudemanagement\\views\\payment\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|solutionrelative:views\\payment\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|c:\\users\\a\\source\\repos\\institudemanagement\\views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CC30A776-9C82-406C-8EFB-C2658EDD5565}|InstitudeManagement.csproj|solutionrelative:views\\home\\dashboard.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddmissionTable.cshtml",
+              "DocumentMoniker": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Views\\AddmissionController1\\AddmissionTable.cshtml",
+              "RelativeDocumentMoniker": "Views\\AddmissionController1\\AddmissionTable.cshtml",
+              "ToolTip": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Views\\AddmissionController1\\AddmissionTable.cshtml",
+              "RelativeToolTip": "Views\\AddmissionController1\\AddmissionTable.cshtml",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAuwGYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T17:01:50.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Payment.cshtml",
+              "DocumentMoniker": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Views\\Payment\\Payment.cshtml",
+              "RelativeDocumentMoniker": "Views\\Payment\\Payment.cshtml",
+              "ToolTip": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Views\\Payment\\Payment.cshtml",
+              "RelativeToolTip": "Views\\Payment\\Payment.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwCkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T16:37:41.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Views\\Payment\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\Payment\\Details.cshtml",
+              "ToolTip": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Views\\Payment\\Details.cshtml",
+              "RelativeToolTip": "Views\\Payment\\Details.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T16:47:07.756Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Views\\Payment\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Views\\Payment\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Views\\Payment\\Delete.cshtml",
+              "RelativeToolTip": "Views\\Payment\\Delete.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T16:28:00.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Views\\Payment\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Payment\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Views\\Payment\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Payment\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T16:26:24.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymentController.cs",
+              "ToolTip": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAOkAAAAAAAAAAAAowO4AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-12T15:28:04.48Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Dashboard.cshtml",
+              "DocumentMoniker": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Views\\Home\\Dashboard.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Dashboard.cshtml",
+              "ToolTip": "C:\\Users\\A\\source\\repos\\InstitudeManagement\\Views\\Home\\Dashboard.cshtml",
+              "RelativeToolTip": "Views\\Home\\Dashboard.cshtml",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAqwFcAAAB7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-11T09:56:29.121Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

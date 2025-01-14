@@ -1,0 +1,168 @@
+﻿@model InstitudeManagement.Models.Payment
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto text-center text-white">Update the payment details below</h1>
+    </div>
+</nav>
+
+
+<hr />
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <input type="hidden" asp-for="Pid" />
+
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <td><label asp-for="StudentName" class="control-label">Student Name</label></td>
+                            <td>
+                                <input asp-for="StudentName" class="form-control" />
+                                <span asp-validation-for="StudentName" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="StudentId" class="control-label">Student</label></td>
+                            <td>
+                                <select asp-for="StudentId" class="form-control" asp-items="ViewBag.StudentId"></select>
+                                <span asp-validation-for="StudentId" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="MobileNo" class="control-label">Mobile No</label></td>
+                            <td>
+                                <input asp-for="MobileNo" class="form-control" />
+                                <span asp-validation-for="MobileNo" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="Gmail" class="control-label">Email</label></td>
+                            <td>
+                                <input asp-for="Gmail" class="form-control" />
+                                <span asp-validation-for="Gmail" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="ParentName" class="control-label">Parent Name</label></td>
+                            <td>
+                                <input asp-for="ParentName" class="form-control" />
+                                <span asp-validation-for="ParentName" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="CourseName" class="control-label">Course Name</label></td>
+                            <td>
+                                <input asp-for="CourseName" class="form-control" />
+                                <span asp-validation-for="CourseName" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="ReceiptDate" class="control-label">Receipt Date</label></td>
+                            <td>
+                                <input asp-for="ReceiptDate" class="form-control" />
+                                <span asp-validation-for="ReceiptDate" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="ReceiptNo" class="control-label">Receipt No</label></td>
+                            <td>
+                                <input asp-for="ReceiptNo" class="form-control" />
+                                <span asp-validation-for="ReceiptNo" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="FeesStatus" class="control-label">Fees Status</label></td>
+                            <td>
+                                <input asp-for="FeesStatus" class="form-control" />
+                                <span asp-validation-for="FeesStatus" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="ReceivedAmount" class="control-label">Received Amount</label></td>
+                            <td>
+                                <input asp-for="ReceivedAmount" class="form-control" />
+                                <span asp-validation-for="ReceivedAmount" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="ReceivedMode" class="control-label">Received Mode</label></td>
+                            <td>
+                                <input asp-for="ReceivedMode" class="form-control" />
+                                <span asp-validation-for="ReceivedMode" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="TransactionStatus" class="control-label">Transaction Status</label></td>
+                            <td>
+                                <input asp-for="TransactionStatus" class="form-control" />
+                                <span asp-validation-for="TransactionStatus" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="TransactionNumber" class="control-label">Transaction Number</label></td>
+                            <td>
+                                <input asp-for="TransactionNumber" class="form-control" />
+                                <span asp-validation-for="TransactionNumber" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="Narration" class="control-label">Narration</label></td>
+                            <td>
+                                <input asp-for="Narration" class="form-control" />
+                                <span asp-validation-for="Narration" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="ReceivedBy" class="control-label">Received By</label></td>
+                            <td>
+                                <input asp-for="ReceivedBy" class="form-control" />
+                                <span asp-validation-for="ReceivedBy" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="TermCondition" class="control-label">Terms & Conditions</label></td>
+                            <td>
+                                <input asp-for="TermCondition" class="form-control" />
+                                <span asp-validation-for="TermCondition" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="ReceiptRemark" class="control-label">Receipt Remark</label></td>
+                            <td>
+                                <input asp-for="ReceiptRemark" class="form-control" />
+                                <span asp-validation-for="ReceiptRemark" class="text-danger"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label asp-for="TransactionDate" class="control-label">Transaction Date</label></td>
+                            <td>
+                                <input asp-for="TransactionDate" class="form-control" />
+                                <span asp-validation-for="TransactionDate" class="text-danger"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="form-group text-center">
+                    <input type="submit" value="Save Changes" class="btn btn-success btn-lg" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="text-center mt-3">
+        <a class="btn btn-secondary btn-lg" asp-action="Payment">Back to List</a>
+    </div>
+</div>
+

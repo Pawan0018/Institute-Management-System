@@ -1,0 +1,64 @@
+﻿@model InstitudeManagement.Models.Course1
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto text-center text-white">Cource Details</h1>
+    </div>
+</nav>
+
+
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0">
+        <div class="card-header bg-dark text-white">
+            <h4 class="mb-0 text-center">@Model.CourseName</h4>
+        </div>
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-4 text-secondary font-weight-bold">@Html.DisplayNameFor(model => model.CourseName)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.CourseName)</dd>
+
+                <dt class="col-sm-4 text-secondary font-weight-bold">@Html.DisplayNameFor(model => model.FrontEnd)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.FrontEnd)</dd>
+
+                <dt class="col-sm-4 text-secondary font-weight-bold">@Html.DisplayNameFor(model => model.BackEnd)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.BackEnd)</dd>
+
+                <dt class="col-sm-4 text-secondary font-weight-bold">@Html.DisplayNameFor(model => model.DataBaseLanguage)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.DataBaseLanguage)</dd>
+
+                <dt class="col-sm-4 text-secondary font-weight-bold">@Html.DisplayNameFor(model => model.Duration)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Duration)</dd>
+
+                <dt class="col-sm-4 text-secondary font-weight-bold">@Html.DisplayNameFor(model => model.Fees)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Fees)</dd>
+
+                <dt class="col-sm-4 text-secondary font-weight-bold">@Html.DisplayNameFor(model => model.CourseFormate)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.CourseFormate)</dd>
+
+                <dt class="col-sm-4 text-secondary font-weight-bold">@Html.DisplayNameFor(model => model.CourseDescription)</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.CourseDescription)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a class="btn btn-warning btn-lg px-4 me-2" asp-action="Edit" asp-route-id="@Model?.Id">
+            <i class="fas fa-edit"></i> Edit
+        </a>
+        <a class="btn btn-secondary btn-lg px-4 me-2" asp-action="CourseTable">
+            <i class="fas fa-arrow-left"></i> Back to List
+        </a>
+        <button class="btn btn-success btn-lg px-4" onclick="window.print();">
+            <i class="fas fa-print"></i> Print
+        </button>
+    </div>
+</div>

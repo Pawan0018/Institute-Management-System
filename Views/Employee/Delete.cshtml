@@ -1,0 +1,130 @@
+﻿@model InstitudeManagement.Models.Employee
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto text-center text-white">Delete Employee </h1>
+    </div>
+</nav>
+
+@* 
+<h1 class="text-danger text-center mb-4">Delete Employee</h1> *@
+
+<div class="container">
+   
+    <div class="card shadow-sm mb-4">
+        
+        <div class="card-body">
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <td>@Html.DisplayFor(model => model.Name)</td>
+                    </tr>
+                    <tr>
+                        <th>Gender</th>
+                        <td>@Html.DisplayFor(model => model.Gender)</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>@Html.DisplayFor(model => model.Email)</td>
+                    </tr>
+                    <tr>
+                        <th>Contact Number</th>
+                        <td>@Html.DisplayFor(model => model.ContactNo)</td>
+                    </tr>
+                    <tr>
+                        <th>Department</th>
+                        <td>@Html.DisplayFor(model => model.Department)</td>
+                    </tr>
+                    <tr>
+                        <th>Specialized Subject</th>
+                        <td>@Html.DisplayFor(model => model.SpecializedSubject)</td>
+                    </tr>
+                    <tr>
+                        <th>Designation</th>
+                        <td>@Html.DisplayFor(model => model.Designation)</td>
+                    </tr>
+                    <tr>
+                        <th>Date of Joining</th>
+                        <td>@Html.DisplayFor(model => model.DateOfJoing)</td>
+                    </tr>
+                    <tr>
+                        <th>Salary</th>
+                        <td>@Html.DisplayFor(model => model.Salary)</td>
+                    </tr>
+                    <tr>
+                        <th>ID Proof Type</th>
+                        <td>@Html.DisplayFor(model => model.IdproofType)</td>
+                    </tr>
+                    <tr>
+                        <th>ID Proof Number</th>
+                        <td>@Html.DisplayFor(model => model.IdproofNumber)</td>
+                    </tr>
+                    <tr>
+                        <th>Status</th>
+                        <td>@Html.DisplayFor(model => model.Status)</td>
+                    </tr>
+                    <tr>
+                        <th>CurrentAddress</th>
+                        <td>@Html.DisplayFor(model => model.CurrentAddress)</td>
+                    </tr>
+                    <tr>
+                        <th>PermanentAddress</th>
+                        <td>@Html.DisplayFor(model => model.PermanentAddress)</td>
+                    </tr>
+                    <tr>
+                        <th>MaritalStatus</th>
+                        <td>@Html.DisplayFor(model => model.MaritalStatus)</td>
+                    </tr>
+                    <tr>
+                        <th>PreviesExperiance</th>
+                        <td>@Html.DisplayFor(model => model.PreviesExperiance)</td>
+                    </tr>
+                    <tr>
+                        <th>ExperianceInYear</th>
+                        <td>@Html.DisplayFor(model => model.ExperianceInYear)</td>
+                    </tr>
+                 
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="text-center">
+        <!-- Trigger the modal -->
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
+            <i class="fas fa-trash"></i> Delete
+        </button>
+        <a class="btn btn-secondary" asp-action="EmployeeTable"><i class="fas fa-arrow-left"></i> Back to List</a>
+    </div>
+</div>
+
+<!-- Modal for Confirm Delete -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete <strong>@Model.Name</strong>?
+            </div>
+            <div class="modal-footer">
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" asp-for="Id" />
+                    <button type="submit" class="btn btn-danger"><i class="fas fa-check"></i> Yes, Delete</button>
+                </form>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-times"></i> Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

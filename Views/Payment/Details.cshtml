@@ -1,0 +1,152 @@
+﻿@model InstitudeManagement.Models.Payment
+
+@{
+    ViewData["Title"] = "Details";
+}
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto text-center text-white">Payment Details</h1>
+    </div>
+</nav>
+
+<div class="card shadow-lg">
+    <div class="card-header  text-white">
+        <h4 class="text-center">Payment Information</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.StudentName)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.StudentName)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.MobileNo)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.MobileNo)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.Gmail)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Gmail)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.ParentName)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ParentName)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.CourseName)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.CourseName)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.ReceiptDate)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ReceiptDate)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.ReceiptNo)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ReceiptNo)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.FeesStatus)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.FeesStatus)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.ReceivedAmount)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ReceivedAmount)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.ReceivedMode)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ReceivedMode)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.TransactionStatus)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.TransactionStatus)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.TransactionNumber)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.TransactionNumber)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.Narration)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Narration)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.ReceivedBy)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ReceivedBy)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.TermCondition)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.TermCondition)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.ReceiptRemark)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.ReceiptRemark)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.TransactionDate)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.TransactionDate)
+            </dd>
+
+            <dt class="col-sm-3 font-weight-bold">
+                @Html.DisplayNameFor(model => model.Student)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Student.Id)
+            </dd>
+        </dl>
+    </div>
+    <div class="card-footer text-center">
+        <a asp-action="Edit" asp-route-id="@Model?.Pid" class="btn btn-warning">Edit</a>
+        <a asp-action="Payment" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>

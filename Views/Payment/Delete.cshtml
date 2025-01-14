@@ -1,0 +1,92 @@
+﻿@model InstitudeManagement.Models.Payment
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="display-4 fw-bold mx-auto text-center text-white">Delete Record</h1>
+    </div>
+</nav>
+
+
+
+<div class="container mt-4">
+    <h4 class="text-center">Payment Details</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <dl class="row">
+                <dt class="col-sm-4">Student Name:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.StudentName)</dd>
+
+                <dt class="col-sm-4">Mobile No:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.MobileNo)</dd>
+
+                <dt class="col-sm-4">Email:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Gmail)</dd>
+
+                <dt class="col-sm-4">Parent Name:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.ParentName)</dd>
+
+                <dt class="col-sm-4">Course Name:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.CourseName)</dd>
+
+                <dt class="col-sm-4">Receipt Date:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.ReceiptDate)</dd>
+
+                <dt class="col-sm-4">Receipt No:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.ReceiptNo)</dd>
+
+                <dt class="col-sm-4">Fees Status:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.FeesStatus)</dd>
+
+                <dt class="col-sm-4">Received Amount:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.ReceivedAmount)</dd>
+            </dl>
+        </div>
+
+        <div class="col-md-6">
+            <dl class="row">
+                <dt class="col-sm-4">Received Mode:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.ReceivedMode)</dd>
+
+                <dt class="col-sm-4">Transaction Status:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.TransactionStatus)</dd>
+
+                <dt class="col-sm-4">Transaction Number:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.TransactionNumber)</dd>
+
+                <dt class="col-sm-4">Narration:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Narration)</dd>
+
+                <dt class="col-sm-4">Received By:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.ReceivedBy)</dd>
+
+                <dt class="col-sm-4">Term Condition:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.TermCondition)</dd>
+
+                <dt class="col-sm-4">Receipt Remark:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.ReceiptRemark)</dd>
+
+                <dt class="col-sm-4">Transaction Date:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.TransactionDate)</dd>
+
+                <dt class="col-sm-4">Student ID:</dt>
+                <dd class="col-sm-8">@Html.DisplayFor(model => model.Student.Id)</dd>
+            </dl>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center mt-2">
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Pid" />
+            <button type="submit" class="btn btn-danger btn-lg">Delete Payment</button>
+        </form>
+        <a class="btn btn-secondary btn-lg" asp-action="Payment">Back to List</a>
+    </div>
+</div>
+

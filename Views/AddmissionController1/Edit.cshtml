@@ -1,0 +1,240 @@
+﻿@model InstitudeManagement.Models.Addmission1
+
+@{
+    ViewData["Title"] = "Edit Admission";
+}
+<nav class="navbar navbar-light bg-warning">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <a href="/" class="navbar-brand">
+            <img src="~/Images/Picsart_24-12-07_18-34-26-772 (1).png" style="width:80px;" alt="Logo" />
+        </a>
+        <h1 class="mx-auto text-center text-white">Update Addmission Details</h1>
+    </div>
+</nav>
+
+
+
+
+<hr />
+<div class="row justify-content-center fw-bold">
+    <div class="col-md-8">
+        <h3 class="text-secondary">Basic Information</h3>
+        <form asp-action="Edit" id="editForm">
+            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <table class="table table-bordered">
+                <tr>
+                    <td><label asp-for="Name" class="form-label">Student Name:</label></td>
+                    <td><input asp-for="Name" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Gender" class="form-label">Gender:</label></td>
+                    <td><input asp-for="Gender" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Dob" class="form-label">Date of Birth:</label></td>
+                    <td><input asp-for="Dob" type="date" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="ContactNo" class="form-label">Contact Number:</label></td>
+                    <td><input asp-for="ContactNo" type="tel" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="AadharcardNo" class="form-label">Aadharcard No:</label></td>
+                    <td><input asp-for="AadharcardNo" type="tel" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Email" class="form-label">Email Address:</label></td>
+                    <td><input asp-for="Email" type="email" class="form-control" /></td>
+                </tr>
+            </table>
+
+            <h3 class="text-secondary">Parent Details</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <td><label asp-for="ParentName" class="form-label">Parent Name:</label></td>
+                    <td><input asp-for="ParentName" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="ParentContactNo" class="form-label">Parent Contact Number:</label></td>
+                    <td><input asp-for="ParentContactNo" type="tel" class="form-control" /></td>
+                </tr>
+            </table>
+
+            <h3 class="text-secondary">Address Details</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <td><label asp-for="PermanentAddress" class="form-label">Permanent Address:</label></td>
+                    <td><input asp-for="PermanentAddress" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="CurrentAddress" class="form-label">Current Address:</label></td>
+                    <td><input asp-for="CurrentAddress" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="City" class="form-label">City:</label></td>
+                    <td><input asp-for="City" class="form-control" /></td>
+                </tr>
+            </table>
+
+            <h3 class="text-secondary">Education Details:</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <td><label asp-for="Qualification" class="form-label">Qualification:</label></td>
+                    <td><input asp-for="Qualification" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="PreviousSchoolClg" class="form-label">Previous School/College:</label></td>
+                    <td><input asp-for="PreviousSchoolClg" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="Marks" class="form-label">Marks:</label></td>
+                    <td><input asp-for="Marks" class="form-control" /></td>
+                </tr>
+            </table>
+
+            <h3 class="text-secondary">Course Details</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <td><label asp-for="Course" class="form-label">Course:</label></td>
+                    <td><select asp-for="Course" class="form-control" asp-items="ViewBag.Courses">
+                        <option>--Update Course--</option>
+                    </select>
+                        <span asp-validation-for="Course" class="text-danger"></span>
+                    </td>
+                </tr>
+                   <tr>
+                    <td><label asp-for="FrontEnd" class="form-label">FrontEnd:</label></td>
+                    <td><input asp-for="FrontEnd" class="form-control" /></td>
+                </tr>
+                   <tr>
+                    <td><label asp-for="BackEnd" class="form-label">BackEnd:</label></td>
+                    <td><input asp-for="BackEnd"  class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="DataBaseLanguage" class="form-label">DataBaseLanguage:</label></td>
+                    <td><input asp-for="DataBaseLanguage"  class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="AddmissionDate" class="form-label">Admission Date:</label></td>
+                    <td><input asp-for="AddmissionDate" type="date" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="RegistrationFees" class="form-label">Registration Fees:</label></td>
+                    <td><input asp-for="RegistrationFees" class="form-control" /></td>
+                </tr>
+            </table>
+
+            <h3 class="text-secondary">Registration Details</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <td><label asp-for="PaymentMode" class="form-label">Payment Mode:</label></td>
+                    <td><input asp-for="PaymentMode" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="TransactionId" class="form-label">Transaction ID:</label></td>
+                    <td><input asp-for="TransactionId" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="CourseFees" class="form-label">Course Fees:</label></td>
+                    <td><input asp-for="CourseFees" class="form-control" /></td>
+                </tr>
+
+                 <tr>
+                    <td><label asp-for="Dicount" class="form-label">Dicount:</label></td>
+                    <td><input asp-for="Dicount" class="form-control" /></td>
+                </tr>
+
+                <tr>
+                    <td><label asp-for="DicountedCourceFees" class="form-label">DicountedCourceFees:</label></td>
+                    <td><input asp-for="DicountedCourceFees" class="form-control" /></td>
+                </tr>
+            </table>
+
+            <h3 class="text-secondary">Installment Details</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <td><label asp-for="Installment" class="control-label">Installment:</label></td>
+                    <td><input asp-for="Installment" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="FirstDate" class="control-label">First Date:</label></td>
+                    <td><input asp-for="FirstDate" type="date" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="FristInsta" class="control-label">First Installment:</label></td>
+                    <td><input asp-for="FristInsta" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="SecondDate" class="control-label">Second Date:</label></td>
+                    <td><input asp-for="SecondDate" type="date" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="SecondInsta" class="control-label">Second Installment:</label></td>
+                    <td><input asp-for="SecondInsta" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="ThirdDate" class="control-label">Third Date:</label></td>
+                    <td><input asp-for="ThirdDate" type="date" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="ThirdInsta" class="control-label">Third Installment:</label></td>
+                    <td><input asp-for="ThirdInsta" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="FourthDate" class="control-label">Fourth Date:</label></td>
+                    <td><input asp-for="FourthDate" type="date" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="FourthInsta" class="control-label">Fourth Installment:</label></td>
+                    <td><input asp-for="FourthInsta" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="FifthDate" class="control-label">Fifth Date:</label></td>
+                    <td><input asp-for="FifthDate" type="date" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="FifthInsta" class="control-label">Fifth Installment:</label></td>
+                    <td><input asp-for="FifthInsta" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="SixDate" class="control-label">Sixth Date:</label></td>
+                    <td><input asp-for="SixDate" type="date" class="form-control" /></td>
+                </tr>
+                <tr>
+                    <td><label asp-for="SixInsta" class="control-label">Sixth Installment:</label></td>
+                    <td><input asp-for="SixInsta" class="form-control" /></td>
+                </tr>
+            </table>
+
+            <h3 class="text-secondary">Admission Details</h3>
+            <table class="table table-bordered">
+                <tr>
+                    <td><label asp-for="AdmissionTakenBy" class="form-label">Admission Taken By:</label></td>
+                    <td><input asp-for="AdmissionTakenBy" class="form-control" /></td>
+                </tr>
+            </table>
+
+            <div class="text-center">
+                <input type="submit" value="Save Changes" class="btn btn-success px-5 py-2" />
+                <a asp-action="AddmissionTable" class="btn btn-secondary ms-3">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Confirm before submitting the form
+        document.getElementById("editForm").addEventListener("submit", function (e) {
+            const confirmed = confirm("Are you sure you want to update this admission?");
+            if (!confirmed) {
+                e.preventDefault(); // Prevent form submission
+            }
+        });
+
+
+
+    </script>
+}
